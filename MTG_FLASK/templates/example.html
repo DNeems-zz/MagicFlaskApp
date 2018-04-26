@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Page</title>
+</head>
+<body>
+<h1>The card is {{ card_name }}</h1>
+<h2>From: {{ card_set }}</h2>
+<h2>MTG JSON ID: {{ card_id }}</h2>
+
+<a href = "{{ card_url }}">Check out the art</a>
+<p>{{ card_url }}</p>
+<img src = {{url_for('static', filename='img/card_image.jpg')}}?dummy={{ dummy_var }}>
+</body>
+</html>

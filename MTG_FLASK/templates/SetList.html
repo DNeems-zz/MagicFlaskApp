@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css" rel="stylesheet" type="text/css" />
+<head>
+    <meta charset="UTF-8">
+    <title>A Table with all the MTG Sets</title>
+    <h1>I have <s>no</s> idea why I did this </h1>
+</head>
+<body>
+<table style="border-collapse: collapse;">
+<tr>
+{% for setCode_Pair in setCode_Pairs %}
+    {% if (loop.index+-1) % 6 == 0 %}
+        <tr>
+    {% endif %}
+            <td style="width:150px; height:150px; border: 3px solid black;">
+
+                <i style = "font-size: 100px; align:center; width:150px;" class="ss ss-fw ss-{{ setCode_Pair.ThreeLetter.lower() }} ss-rare ss-grad"></i>
+                <p style = "text-align:center;padding-left: 1px;padding-right: 1px;">{{setCode_Pair.FullName}}</p>
+            </td>
+
+    {% if (loop.index) % 6 == 0 %}
+        </tr>
+    {% endif %}
+{% endfor %}
+</tr>
+</table>
+</body>
+</html>
